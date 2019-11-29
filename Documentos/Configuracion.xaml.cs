@@ -56,17 +56,11 @@ namespace Documentos
 
         private void AceptarButtton_Click(object sender, RoutedEventArgs e)
         {
-            
-            Alto = AltoTextBox.Text;
-            Ancho = AnchoTextBox.Text;
+
+            this.DialogResult = true;
             this.Close();
         }
 
-        private void CancelarButton_Click(object sender, RoutedEventArgs e)
-        {
-            AltoTextBox.Text = "";
-            AnchoTextBox.Text = "";
-            this.Close();
-        }
+        
     }
 }

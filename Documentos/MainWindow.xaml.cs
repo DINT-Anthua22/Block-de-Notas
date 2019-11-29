@@ -20,7 +20,36 @@ namespace Documentos
     /// </summary>
     public partial class MainWindow : Window
     {
-        string ancho, alto;
+        string _alto="500";
+        public string Alto
+        {
+            get
+            {
+                return _alto;
+            }
+            set
+            {
+                if (_alto != value)
+                {
+                    _alto = value;
+                }
+            }
+        }
+        string _ancho="500";
+        public string Ancho
+        {
+            get
+            {
+                return _ancho;
+            }
+            set
+            {
+                if (_ancho != value)
+                {
+                    _ancho = value;
+                }
+            }
+        }
         Configuracion config;
         public MainWindow()
         {
@@ -33,8 +62,11 @@ namespace Documentos
             Documento documento = new Documento();
 
             documento.Owner = this;
-            documento.Show();
+            documento.Width = double.Parse(Ancho);
+            documento.Height = double.Parse(Alto);
             documento.Title +=" "+ this.OwnedWindows.Count.ToString();
+            documento.Show();
+           
 
         }
 
@@ -42,13 +74,16 @@ namespace Documentos
         {
 
             config = new Configuracion();
-            config.AnchoTextBox.Text = ancho;
-            config.AltoTextBox.Text = alto;
-            ancho = config.Ancho;
-            alto = config.Alto;
+            config.Owner = this;
 
-            config.ShowDialog();
+            config.Ancho = Ancho;
+            config.Alto = Alto;
 
+           if(config.ShowDialog() == true){
+                Alto = config.Alto;
+                Ancho = config.Ancho;
+           }
+            
            
             
         }

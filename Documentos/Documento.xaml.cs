@@ -24,12 +24,7 @@ namespace Documentos
         public Documento()
         {
             InitializeComponent();
-            Configuracion c = new Configuracion();
-            double ancho, alto;
-            alto=double.Parse(c.AltoTextBox.Text);
-            ancho=double.Parse(c.AnchoTextBox.Text);
-            this.Height = alto;
-            this.Width = ancho;
+                  
 
         }
 

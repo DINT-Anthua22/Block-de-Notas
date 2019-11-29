@@ -127,7 +127,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="fileinterfacesymboloftextpapersheet_79740.ico" />
+    <Resource Include="hoja.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="documentediting_editdocuments_text_documentedi_2820.ico" />
